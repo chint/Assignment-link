@@ -12,12 +12,7 @@
  */
 public class BinaryTree {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        public void addNode( String key, String name,String name2,int isbn) {
+   public void addNode( String key, String name,String name2,int isbn) {
        
 		// Create a new Node and initialize it
   
@@ -86,6 +81,6 @@ Node newNode = new Node(key, name, name2,isbn);
 		}
 
 	}
-    }
-    
+
+       
 }
