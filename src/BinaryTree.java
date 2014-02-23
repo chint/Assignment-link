@@ -4,13 +4,13 @@
  * and open the template in the editor.
  */
 
-package dsa.assignment.link;
+//package dsa.assignment.link;
 
 /**
  *
  * @author Chinthaka
  */
-public class DSAAssignmentLINK {
+public class BinaryTree {
 
     /**
      * @param args the command line arguments
