@@ -11,7 +11,7 @@
  * @author Chinthaka
  */
 public class BinaryTree {
-
+Node root;
    public void addNode( String key, String name,String name2,int isbn) {
        
 		// Create a new Node and initialize it
@@ -83,4 +83,45 @@ Node newNode = new Node(key, name, name2,isbn);
 	}
 
        
+}
+
+class Node {
+
+	String key;
+       // String title;
+	String name;
+        String name2;
+        int isbn;
+        
+
+	Node leftChild;
+	Node rightChild;
+
+	Node(String key, String name,String name2,int isbn) {
+
+		this.key = key;
+//                this.title = title;
+		this.name = name;
+                this.name2 = name2;
+                 this.isbn = isbn;
+	}
+
+//	public String toString() {
+//
+//		//return name +" "+ name2 + " has the key " + key;
+//return ""+key;
+//		/*
+//		 * return name + " has the key " + key + "\nLeft Child: " + leftChild +
+//		 * "\nRight Child: " + rightChild + "\n";
+//		 */
+//
+//	}
+
+     public Node getRight()
+    {
+        return rightChild;
+    }
+//  public boolean isEmpty() {
+//        return true;
+//    }
 }
