@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,6 +14,7 @@
  * @author Chinthaka
  */
 public class BinaryTree {
+       public  int isbnsrch,isbndel;
 Node root;
    public void addNode( String key, String name,String name2,int isbn) {
        
@@ -82,8 +86,44 @@ Node newNode = new Node(key, name, name2,isbn);
 
 	}
 
-       
+ int bbg=10,x=0;
+	public void findbyIsbn(Node focusNode) 
+        {
+            
+        if (focusNode != null ) {
+			System.out.println("here");
+                       if(bbg!=100)
+                        {System.out.println(focusNode);
+                                            
+                            if(focusNode.isbn==isbnsrch)
+                              {
+                                  System.out.println("found");
+                              System.out.println(focusNode.key);
+                                 JOptionPane.showMessageDialog(null,"Title:"+ focusNode.key+"\n Author:"
+                                         +focusNode.name+" "+focusNode.name2+"\n ISBN#:"
+                                         +focusNode.isbn,"search result",JOptionPane.INFORMATION_MESSAGE);
+                             bbg=100;
+                             x=10;
+//                             return focusNode.key;
+                              }
+                        findbyIsbn(focusNode.leftChild);
+			findbyIsbn(focusNode.rightChild);
+                        }
+			                        
+		}else if (focusNode == null ) {
+           
+            if(x == 0 ) {
+                    
+                    JOptionPane.showMessageDialog(null,"not found");
+                    x=10;
+                }
+               // else{JOptionPane.showMessageDialog(null,"not found");}
+	}}  
+   
+   
 }
+
+
 
 class Node {
 
