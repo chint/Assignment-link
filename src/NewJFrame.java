@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -305,7 +308,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+BinaryTree theTree = new BinaryTree();
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         if(jTextField1.getText().equals(""))
@@ -426,7 +429,7 @@ public class NewJFrame extends javax.swing.JFrame {
         preorderTraverseTree(theTree.root);
         //        filltext(theTree.root);
     }//GEN-LAST:event_jButton5ActionPerformed
-
+int clr;
     /**
      * @param args the command line arguments
      */
