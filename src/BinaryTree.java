@@ -383,6 +383,74 @@ System.out.println("fnkey"+key);
 		return replacement;    
         }
         
+  public static void main(String[] args) {
+    BinaryTree theTree = new BinaryTree();
+ 
+		theTree.addNode("ff", "boss2","dd",50);
+
+                theTree.addNode("bb", "Vice","n",30);
+
+                theTree.addNode("hh", "Secr","eta",55);
+
+                theTree.addNode("ee", "Sales","Man",45);
+
+               theTree.addNode("aa", "Sale","sm",43);
+    
+    
+     //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+ java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new NewJFrame().setVisible(true);
+            }
+        });
+		
+           
+		// Different ways to traverse binary trees
+
+		// theTree.inOrderTraverseTree(theTree.root);
+
+		// theTree.preorderTraverseTree(theTree.root);
+
+		// theTree.postOrderTraverseTree(theTree.root);
+
+		// Find the node with key 75
+
+		//System.out.println("\nNode with the key 75");
+           
+//Scanner in = new Scanner(System.in);
+// 
+//      System.out.println("Enter a string");
+//     isbnsrch = Integer.parseInt(in.nextLine());
+     
+	//	System.out.println(theTree.findNodei(theTree.root,43));
+           //theTree.remove("");
+//theTree.findbyIsbn(theTree.root);
+//System.out.println(theTree.postOrderTraverseTree(theTree.root));
+//
+ 
+//theTree.findNodei(50);
+//System.out.println(theTree.findMaximum(theTree.root).key);
+}
     
 }
 
