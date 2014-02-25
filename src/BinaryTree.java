@@ -183,7 +183,26 @@ System.out.println("fnkey"+key);
                
 
 	}
-   
+    public void deletebyisbn(Node focusNode) {
+          if (focusNode != null) {
+			System.out.println("del here"+bbg+isbndel);
+                        
+                        if(bbg!=100)
+                        {System.out.println(focusNode.isbn);
+                       // findNodei(focusNode);
+                        
+                            if(focusNode.isbn==isbndel)
+                              {
+                                  System.out.println("found");
+                                  System.out.println(focusNode.key);
+                                 remove(focusNode.key);
+                                    bbg=100;
+                              }
+                        deletebyisbn(focusNode.leftChild);
+			deletebyisbn(focusNode.rightChild);
+                        }		                       
+		}
+	}
    
 }
 
