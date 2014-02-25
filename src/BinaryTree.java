@@ -139,6 +139,50 @@ Node newNode = new Node(key, name, name2,isbn);
                 }
                // else{JOptionPane.showMessageDialog(null,"not found");}
 	}}  
+        
+        
+        
+        public Node findNode(String key) {
+
+		// Start at the top of the tree
+System.out.println("fnkey"+key);
+		Node focusNode = root;
+//System.out.println( focusNode.rightChild.key);
+		// While we haven't found the Node
+		// keep looking
+
+		while ((key.compareTo( focusNode.key ))!=0) {
+//System.out.println(key.compareTo( focusNode.key ) );
+			// If we should search to the left
+
+			if ((key.compareTo( focusNode.key ))<0) {
+ //System.out.println("gg"+key+focusNode.key+key.compareTo( focusNode.key ) );
+				// Shift the focus Node to the left child
+
+				focusNode = focusNode.leftChild;
+//System.out.println(key.compareTo( focusNode.key ) );
+			} else  {
+                        
+ //System.out.println("ff"+key.compareTo( focusNode.key ) );
+				// Shift the focus Node to the right child
+
+				focusNode = focusNode.rightChild;
+
+			}
+
+			// The node wasn't found
+
+			if (focusNode == null){
+// System.out.println("hh"+key.compareTo( focusNode.key ) );
+                            //System.out.println("nothingf");
+                        	return null;}
+
+		}
+ //System.out.println("this retturn" );
+		return focusNode;
+               
+
+	}
    
    
 }
