@@ -348,6 +348,41 @@ System.out.println("fnkey"+key);
 		return true;
 
 	}  
+  
+  public Node getReplacementNode(Node replacedNode) {
+
+		Node replacementParent = replacedNode;
+		Node replacement = replacedNode;
+
+		Node focusNode = replacedNode.rightChild;
+
+		// While there are no more left children
+
+		while (focusNode != null) {
+
+			replacementParent = replacement;
+
+			replacement = focusNode;
+
+			focusNode = focusNode.leftChild;
+
+		}
+
+		// If the replacement isn't the right child
+		// move the replacement into the parents
+		// leftChild slot and move the replaced nodes
+		// right child into the replacements rightChild
+
+		if (replacement != replacedNode.rightChild) {
+
+			replacementParent.leftChild = replacement.rightChild;
+			replacement.rightChild = replacedNode.rightChild;
+
+		}
+
+		return replacement;    
+        }
+        
     
 }
 
