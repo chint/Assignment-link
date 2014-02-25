@@ -7,11 +7,11 @@ import javax.swing.JOptionPane;
  * and open the template in the editor.
  */
 
-//package dsa.assignment.link;
+//package dsa.assidcdscdscdsgndccscsnk;
 
 /**
  *
- * @author Chinthaka
+ * c
  */
 public class BinaryTree {
        public  int isbnsrch,isbndel;
