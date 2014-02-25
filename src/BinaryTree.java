@@ -166,16 +166,7 @@ class Node {
                  this.isbn = isbn;
 	}
 
-//	public String toString() {
-//
-//		//return name +" "+ name2 + " has the key " + key;
-//return ""+key;
-//		/*
-//		 * return name + " has the key " + key + "\nLeft Child: " + leftChild +
-//		 * "\nRight Child: " + rightChild + "\n";
-//		 */
-//
-//	}
+
 
      public Node getRight()
     {
