@@ -1,5 +1,6 @@
 
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -430,6 +431,46 @@ BinaryTree theTree = new BinaryTree();
         //        filltext(theTree.root);
     }//GEN-LAST:event_jButton5ActionPerformed
 int clr;
+ public void preorderTraverseTree(Node focusNode) {
+DefaultTableModel dtm = (DefaultTableModel)jTable1.getModel();
+
+ 
+if(clr!=-1)
+{ dtm.getDataVector().removeAllElements();
+dtm.fireTableDataChanged();
+
+}
+                if (focusNode != null) {
+                        preorderTraverseTree(focusNode.leftChild);
+			
+			System.out.println(focusNode.key);
+                        //filltext(focusNode)
+                        clr=-1;
+                        dtm.addRow(new Object[] {focusNode.key, focusNode.name+" "+focusNode.name2, focusNode.isbn });
+			preorderTraverseTree(focusNode.rightChild);
+
+		}
+
+            } 
+ 
+ public void srcTree(Node focusNode) {
+
+		if (focusNode != null) {
+
+			System.out.println(focusNode.key);
+                       if(focusNode.key.matches(".*"+jTextField5.getText()+".*")){
+//                        JOptionPane.showMessageDialog(null, "thank you for using java");
+                       jDialog1.setVisible(true);
+                       DefaultTableModel gt = (DefaultTableModel)jTable2.getModel();
+
+                 gt.addRow(new Object[] {focusNode.key, focusNode.name+" "+focusNode.name2, focusNode.isbn });
+}
+			srcTree(focusNode.leftChild);
+			srcTree(focusNode.rightChild);
+
+		}
+
+            }
     /**
      * @param args the command line arguments
      */
