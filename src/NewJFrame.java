@@ -407,6 +407,10 @@ BinaryTree theTree = new BinaryTree();
             return;
         }
         theTree.addNode(jTextField1.getText(),jTextField2.getText(),jTextField3.getText(),Integer.parseInt(jTextField4.getText()));
+jTextField1.setText(null);
+jTextField2.setText(null);
+jTextField3.setText(null);
+jTextField4.setText(null);
 
         clr=10;
         preorderTraverseTree(theTree.root);
