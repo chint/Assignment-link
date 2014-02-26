@@ -430,9 +430,21 @@ jTextField4.setText(null);
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         if(jRadioButton3.isSelected()==true){
+            if(jTextField6.getText().equals(""))
+        {
+            JOptionPane.showMessageDialog(null, "Enter Book Title");
+            return;
+        }
+            
             theTree.remove(jTextField6.getText());
+            jTextField6.setText(null);
         }else if(jRadioButton4.isSelected()==true)
         {
+            if(jTextField6.getText().equals(""))
+        {
+            JOptionPane.showMessageDialog(null, "Enter ISBN#");
+            return;
+        }
             try {
                 Integer.parseInt(jTextField6.getText());
                 theTree.x=0;
@@ -443,6 +455,7 @@ jTextField4.setText(null);
             catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(null,"ISBN# should be numeric"  ,"Invalid type",JOptionPane.ERROR_MESSAGE);
             }
+            
         } clr=10;
         preorderTraverseTree(theTree.root);
     }//GEN-LAST:event_jButton4ActionPerformed
