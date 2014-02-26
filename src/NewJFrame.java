@@ -485,7 +485,7 @@ BinaryTree theTree = new BinaryTree();
         DefaultTableModel dtm = (DefaultTableModel)jTable1.getModel();
         dtm.getDataVector().removeAllElements();
         dtm.fireTableDataChanged();
-        //dtm.addRow(new Object[] { theTree.root.key, 5, 5 });
+       
         preorderTraverseTree(theTree.root);
         //        filltext(theTree.root);
     }//GEN-LAST:event_jButton5ActionPerformed
