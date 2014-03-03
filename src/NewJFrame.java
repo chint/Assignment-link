@@ -538,12 +538,26 @@ jTextField4.setText(null);
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel dtm = (DefaultTableModel)jTable1.getModel();
-        dtm.getDataVector().removeAllElements();
-        dtm.fireTableDataChanged();
-       
-        fillTable(theTree.root);
+//        DefaultTableModel dtm = (DefaultTableModel)jTable1.getModel();
+//        dtm.getDataVector().removeAllElements();
+//        dtm.fireTableDataChanged();
+//       
+//        fillTable(theTree.root);
         //        filltext(theTree.root);
+        
+        theTree.addNode("Effective Java Programming Language Guide", "Joshua","Bloch",1);
+theTree.addNode("Design Patterns: Elements of Reusable Object-Oriented Software", "Erich","Gamma",2);
+theTree.addNode("Head First Design Patterns", "Elisabeth ","Freeman",3);
+theTree.addNode("Head First Java (2nd Edition)", "Kathy ","Sierra",4);
+theTree.addNode("Applying UML and Patterns", " Craig","Larman",5);
+theTree.addNode("Core Java", "Cay ","Horstmann",6);
+theTree.addNode("Java Puzzlers", "Joshua","Bloch",7);
+theTree.addNode("Java In A Nutshell", "David ","Flanagan",8);
+theTree.addNode("Java Enterprise in a Nutshell", "Jim ","Farley",9);
+theTree.addNode("Java Cookbook", "Ian ","Darwin",10);
+
+fillTable(theTree.root);
+
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
