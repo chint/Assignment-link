@@ -103,15 +103,15 @@ Node newNode = new Node(key, name, name2,isbn);
 //
 //	}
 
- int bbg=10,x=0;
+ int bbg=10,x=0;// method for find node by isbn
 	public void findbyIsbn(Node focusNode) 
         {
             
         if (focusNode != null ) {
-			System.out.println("here");
+			
                        if(bbg!=100)
                         {System.out.println(focusNode);
-                                            
+      //because isbn is not the key the whole tree must be searched                                      
                             if(focusNode.isbn==isbnsrch)
                               {
                                   System.out.println("found");
@@ -121,7 +121,7 @@ Node newNode = new Node(key, name, name2,isbn);
                                          +focusNode.isbn,"search result",JOptionPane.INFORMATION_MESSAGE);
                              bbg=100;
                              x=10;
-//                             return focusNode.key;
+
                               }
                         findbyIsbn(focusNode.leftChild);
 			findbyIsbn(focusNode.rightChild);
@@ -134,34 +134,27 @@ Node newNode = new Node(key, name, name2,isbn);
                     JOptionPane.showMessageDialog(null,"not found");
                     x=10;
                 }
-               // else{JOptionPane.showMessageDialog(null,"not found");}
+               
 	}}  
         
         
         
         public Node findNode(String key) {
 
-		// Start at the top of the tree
-System.out.println("fnkey"+key);
+		// Start at the top 
 		Node focusNode = root;
-//System.out.println( focusNode.rightChild.key);
-		// While we haven't found the Node
-		// keep looking
+
 
 		while ((key.compareTo( focusNode.key ))!=0) {
-//System.out.println(key.compareTo( focusNode.key ) );
-			// If we should search to the left
+			// search to the left
 
 			if ((key.compareTo( focusNode.key ))<0) {
- //System.out.println("gg"+key+focusNode.key+key.compareTo( focusNode.key ) );
-				// Shift the focus Node to the left child
+				// focus Node to the left child
 
 				focusNode = focusNode.leftChild;
-//System.out.println(key.compareTo( focusNode.key ) );
 			} else  {
                         
- //System.out.println("ff"+key.compareTo( focusNode.key ) );
-				// Shift the focus Node to the right child
+				//  focus Node to the right child
 
 				focusNode = focusNode.rightChild;
 
@@ -170,17 +163,17 @@ System.out.println("fnkey"+key);
 			// The node wasn't found
 
 			if (focusNode == null){
-// System.out.println("hh"+key.compareTo( focusNode.key ) );
-                            //System.out.println("nothingf");
+
                         	return null;}
 
 		}
- //System.out.println("this retturn" );
+ //return found value
 		return focusNode;
                
 
 	}
     public void deletebyisbn(Node focusNode) {
+        //delete node by isbn #
           if (focusNode != null) {
 			System.out.println("del here"+bbg+isbndel);
                         
@@ -192,6 +185,7 @@ System.out.println("fnkey"+key);
                               {
                                   System.out.println("found");
                                   System.out.println(focusNode.key);
+        //send key of the isbn for removal
                                  remove(focusNode.key);
                                     bbg=100;
                               }
@@ -203,31 +197,28 @@ System.out.println("fnkey"+key);
    
   public boolean remove(String key) {
 
-		// Start at the top of the tree
+		// Start at the top 
 
 		Node focusNode = root;
 		Node parent = root;
 
-		// When searching for a Node this will
-		// tell us whether to search to the
-		// right or left
+		
 
 		boolean isItALeftChild = true;
 
-		// While we haven't found the Node
-		// keep looking
+		
 
 		while ((key.compareTo( focusNode.key ))!=0) {
 
 			parent = focusNode;
 
-			// If we should search to the left
+			// search to the left
 
 			if ((key.compareTo( focusNode.key ))<0) {
 
 				isItALeftChild = true;
 
-				// Shift the focus Node to the left child
+				//  focus Node to the left child
 
 				focusNode = focusNode.leftChild;
 
@@ -237,13 +228,13 @@ System.out.println("fnkey"+key);
 
 				isItALeftChild = false;
 
-				// Shift the focus Node to the right child
+				//  focus Node to the right child
 
 				focusNode = focusNode.rightChild;
 
 			}
 
-			// The node wasn't found
+			// node not
 
 			if (focusNode == null)
 				return false;
