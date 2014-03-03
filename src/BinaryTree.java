@@ -33,7 +33,7 @@ Node newNode = new Node(key, name, name2,isbn);
 			
 			Node focusNode = root;
 
-			//  parent for our new Node
+			//  parent for  new Node
 
 			Node parent;
 
@@ -83,25 +83,25 @@ Node newNode = new Node(key, name, name2,isbn);
 
 	}
    
-   public void inOrderTraverseTree(Node focusNode) {
-
-		if (focusNode != null) {
-
-			// Traverse the left node
-
-			inOrderTraverseTree(focusNode.leftChild);
-
-			// Visit the currently focused on node
-
-			System.out.println(focusNode.key);
-
-			// Traverse the right node
-
-			inOrderTraverseTree(focusNode.rightChild);
-
-		}
-
-	}
+//   public void inOrderTraverseTree(Node focusNode) {
+//
+//		if (focusNode != null) {
+//
+//			// Traverse the left node
+//
+//			inOrderTraverseTree(focusNode.leftChild);
+//
+//			// Visit the currently focused on node
+//
+//			System.out.println(focusNode.key);
+//
+//			// Traverse the right node
+//
+//			inOrderTraverseTree(focusNode.rightChild);
+//
+//		}
+//
+//	}
 
  int bbg=10,x=0;
 	public void findbyIsbn(Node focusNode) 
