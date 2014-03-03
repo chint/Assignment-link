@@ -18,53 +18,50 @@ public class BinaryTree {
 Node root;
    public void addNode( String key, String name,String name2,int isbn) {
        
-		// Create a new Node and initialize it
+		// Create a new Node 
   
 Node newNode = new Node(key, name, name2,isbn);
-		// If there is no root this becomes root
+		// If there is no root
 
 		if (root == null) {
 
 			root = newNode;
 
 		} else {
-//gitcon
-			// Set root as the Node we will start
-			// with as we traverse the tree
 
+			// Set root as the Node we will start
+			
 			Node focusNode = root;
 
-			// Future parent for our new Node
+			//  parent for our new Node
 
 			Node parent;
 
 			while (true) {
 
-				// root is the top parent so we start
-				// there
+				
 
 				parent = focusNode;
 
 				// Check if the new node should go on
 				// the left side of the parent node
 
-//				if (key < focusNode.key) {
                                 if (key.compareTo( focusNode.key )<0) {
-					// Switch focus to the left child
+					//  focus to the left child
 					focusNode = focusNode.leftChild;
 
-					// If the left child has no children
+					// left child has no children
 
 					if (focusNode == null) {
 
-						// then place the new node on the left of it
+						// new node on the left 
 
 						parent.leftChild = newNode;
-						return; // All Done
+						return; 
 
 					}
 
-				} else { // If we get here put the node on the right
+				} else { 
 
 					focusNode = focusNode.rightChild;
 
@@ -72,10 +69,10 @@ Node newNode = new Node(key, name, name2,isbn);
 
 					if (focusNode == null) {
 
-						// then place the new node on the right of it
+						//  new node on the right 
 
 						parent.rightChild = newNode;
-						return; // All Done
+						return; 
 
 					}
 
