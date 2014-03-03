@@ -447,7 +447,7 @@ Node newNode = new Node(key, name, name2,isbn);
 class Node {
 
 	String key;
-     //  ssssss
+     
 	String name;
         String name2;
         int isbn;
@@ -471,8 +471,6 @@ class Node {
     {
         return rightChild;
     }
-//  public boolean isEmpty() {
-//        return true;
-//    }
+
 }
 
