@@ -374,7 +374,7 @@ Node newNode = new Node(key, name, name2,isbn);
   public static void main(String[] args) {
     BinaryTree theTree = new BinaryTree();
  
-		theTree.addNode("ff", "boss2","dd",50);
+		theTree.addNode("Effective Java Programming Language Guide", "Joshua","Bloch",50);
 
                 theTree.addNode("bb", "Vice","n",30);
 
