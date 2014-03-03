@@ -597,7 +597,7 @@ dtm.fireTableDataChanged();
 		if (focusNode != null) {
 
 			System.out.println(focusNode.key);
-                       if(focusNode.key.matches(".*"+jTextField5.getText()+".*")){
+                       if(focusNode.key.matches("(?i).*"+jTextField5.getText()+".*")){
 //                        JOptionPane.showMessageDialog(null, "thank you for using java");
                        jDialog1.setVisible(true);
                        DefaultTableModel gt = (DefaultTableModel)jTable2.getModel();
