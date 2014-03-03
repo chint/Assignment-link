@@ -103,7 +103,9 @@ Node newNode = new Node(key, name, name2,isbn);
 //
 //	}
 
- int bbg=10,x=0;// method for find node by isbn
+ int bbg=10,x=0;
+
+// method for find node by isbn
 	public void findbyIsbn(Node focusNode) 
         {
             
