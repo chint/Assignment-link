@@ -401,7 +401,7 @@ public class NewJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 BinaryTree theTree = new BinaryTree();
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        // add a new node
         if(jTextField1.getText().equals(""))
         {
             JOptionPane.showMessageDialog(null, "Enter Book Title");
@@ -412,7 +412,8 @@ BinaryTree theTree = new BinaryTree();
         }
 
         if(jTextField3.getText().equals(""))
-        {jTextField3.setText("N/A");
+        {JOptionPane.showMessageDialog(null, "Atleast enter author Last name");
+            return;
         }
         if("".equals(jTextField4.getText()))
         { JOptionPane.showMessageDialog(null, "Enter ISBN#");
@@ -434,7 +435,7 @@ jTextField3.setText(null);
 jTextField4.setText(null);
 
         clr=10;
-        preorderTraverseTree(theTree.root);
+        fillTable(theTree.root);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
@@ -450,6 +451,7 @@ jTextField4.setText(null);
     }//GEN-LAST:event_jTextField6ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        //deletions
         if(theTree.root==null)
             {
            JOptionPane.showMessageDialog(null, "tree is empty");
@@ -484,7 +486,7 @@ jTextField4.setText(null);
             }
             
         } clr=10;
-        preorderTraverseTree(theTree.root);
+        fillTable(theTree.root);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
@@ -540,7 +542,7 @@ jTextField4.setText(null);
         dtm.getDataVector().removeAllElements();
         dtm.fireTableDataChanged();
        
-        preorderTraverseTree(theTree.root);
+        fillTable(theTree.root);
         //        filltext(theTree.root);
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -554,7 +556,7 @@ jTextField4.setText(null);
    this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 int clr;
- public void preorderTraverseTree(Node focusNode) {
+ public void fillTable(Node focusNode) {
 DefaultTableModel dtm = (DefaultTableModel)jTable1.getModel();
 
  
@@ -564,20 +566,20 @@ dtm.fireTableDataChanged();
 
 }
                 if (focusNode != null) {
-                        preorderTraverseTree(focusNode.leftChild);
+                        fillTable(focusNode.leftChild);
 			
 			System.out.println(focusNode.key);
                         //filltext(focusNode)
                         clr=-1;
                         dtm.addRow(new Object[] {focusNode.key, focusNode.name+" "+focusNode.name2, focusNode.isbn });
-			preorderTraverseTree(focusNode.rightChild);
+			fillTable(focusNode.rightChild);
 
 		}
 
             } 
  
  public void srcTree(Node focusNode) {
-
+//show keyword search results
 		if (focusNode != null) {
 
 			System.out.println(focusNode.key);
