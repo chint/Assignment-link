@@ -174,6 +174,7 @@ Node newNode = new Node(key, name, name2,isbn);
                
 
 	}
+      public int del=5 ;
     public void deletebyisbn(Node focusNode) {
         //delete node by isbn #
           if (focusNode != null) {
@@ -188,14 +189,18 @@ Node newNode = new Node(key, name, name2,isbn);
                                   System.out.println("found");
                                   System.out.println(focusNode.key);
         //send key of the isbn for removal
-                                 remove(focusNode.key);
+                                  remove(focusNode.key);
+//                                    del=true;
                                     bbg=100;
+                                     del=1;
+                                     
                               }
                         deletebyisbn(focusNode.leftChild);
 			deletebyisbn(focusNode.rightChild);
                         }		                       
 		}
-	}
+                   
+    }
    
   public boolean remove(String key) {
 
@@ -210,7 +215,7 @@ Node newNode = new Node(key, name, name2,isbn);
 
 		
 
-		while ((key.compareTo( focusNode.key ))!=0) {
+		while ((key.compareTo(focusNode.key))!=0) {
 
 			parent = focusNode;
 
