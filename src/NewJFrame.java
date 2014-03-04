@@ -487,7 +487,13 @@ jTextField4.setText(null);
             return;
         }
             
-            theTree.remove(jTextField6.getText());
+            boolean a= theTree.remove(jTextField6.getText());
+            if(a==false){
+             JOptionPane.showMessageDialog(null, "No record was deleted,check the Book Title");
+                }
+            else{
+            JOptionPane.showMessageDialog(null, "Record deleted");
+            }
             jTextField6.setText(null);
         }else if(jRadioButton4.isSelected()==true)
         {
