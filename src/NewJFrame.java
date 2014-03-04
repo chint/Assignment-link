@@ -507,7 +507,15 @@ jTextField4.setText(null);
                 theTree.x=0;
                 theTree.bbg=0;
                 theTree.isbndel=Integer.parseInt(jTextField6.getText());
-                theTree.deletebyisbn(theTree.root);
+               theTree.deletebyisbn(theTree.root);
+                if(theTree.del==1){
+                     JOptionPane.showMessageDialog(null, "Record deleted");
+            theTree.del=5;
+//             theTree.del=f;
+                }
+            else{
+            JOptionPane.showMessageDialog(null, "No record was deleted,check the ISBN#");
+            }
                 jTextField6.setText(null);
             }
             catch (NumberFormatException ex) {
