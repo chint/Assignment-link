@@ -376,15 +376,7 @@ Node newNode = new Node(key, name, name2,isbn);
   public static void main(String[] args) {
     BinaryTree theTree = new BinaryTree();
  
-		theTree.addNode("Effective Java Programming Language Guide", "Joshua","Bloch",50);
-
-                theTree.addNode("bb", "Vice","n",30);
-
-                theTree.addNode("hh", "Secr","eta",55);
-
-                theTree.addNode("ee", "Sales","Man",45);
-
-               theTree.addNode("aa", "Sale","sm",43);
+		
     
     
      //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

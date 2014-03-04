@@ -284,7 +284,8 @@ public class NewJFrame extends javax.swing.JFrame {
         if (jTable1.getColumnModel().getColumnCount() > 0) {
             jTable1.getColumnModel().getColumn(0).setPreferredWidth(100);
             jTable1.getColumnModel().getColumn(1).setPreferredWidth(80);
-            jTable1.getColumnModel().getColumn(2).setPreferredWidth(4);
+            jTable1.getColumnModel().getColumn(2).setMinWidth(3);
+            jTable1.getColumnModel().getColumn(2).setPreferredWidth(2);
         }
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "Search Records", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
