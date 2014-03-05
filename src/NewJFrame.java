@@ -62,8 +62,9 @@ public class NewJFrame extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         jDialog1.setBounds(new java.awt.Rectangle(200, 200, 500, 500));
 
@@ -368,12 +369,26 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jMenu1.setText("File");
 
-        jMenu3.setText("jMenu3");
-        jMenu1.add(jMenu3);
+        jMenuItem2.setText("Exit");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem2);
 
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Edit");
+
+        jMenuItem1.setText("Add Test Data");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem1);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -575,25 +590,13 @@ jTextField4.setText(null);
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-//        DefaultTableModel dtm = (DefaultTableModel)jTable1.getModel();
-//        dtm.getDataVector().removeAllElements();
-//        dtm.fireTableDataChanged();
-//       
-//        fillTable(theTree.root);
+        DefaultTableModel dtm = (DefaultTableModel)jTable1.getModel();
+        dtm.getDataVector().removeAllElements();
+        dtm.fireTableDataChanged();
+       
+        fillTable(theTree.root);
         //        filltext(theTree.root);
-        
-        theTree.addNode("Effective Java Programming Language Guide", "Joshua","Bloch",1);
-theTree.addNode("Design Patterns: Elements of Reusable Object-Oriented Software", "Erich","Gamma",2);
-theTree.addNode("Head First Design Patterns", "Elisabeth ","Freeman",3);
-theTree.addNode("Head First Java (2nd Edition)", "Kathy ","Sierra",4);
-theTree.addNode("Applying UML and Patterns", " Craig","Larman",5);
-theTree.addNode("Core Java", "Cay ","Horstmann",6);
-theTree.addNode("Java Puzzlers", "Joshua","Bloch",7);
-theTree.addNode("Java In A Nutshell", "David ","Flanagan",8);
-theTree.addNode("Java Enterprise in a Nutshell", "Jim ","Farley",9);
-theTree.addNode("Java Cookbook", "Ian ","Darwin",10);
-
-fillTable(theTree.root);
+     
 
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -606,6 +609,28 @@ fillTable(theTree.root);
         // TODO add your handling code here:
    this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+           
+        theTree.addNode("Effective Java Programming Language Guide", "Joshua","Bloch",1);
+theTree.addNode("Design Patterns: Elements of Reusable Object-Oriented Software", "Erich","Gamma",2);
+theTree.addNode("Head First Design Patterns", "Elisabeth ","Freeman",3);
+theTree.addNode("Head First Java (2nd Edition)", "Kathy ","Sierra",4);
+theTree.addNode("Applying UML and Patterns", " Craig","Larman",5);
+theTree.addNode("Core Java", "Cay ","Horstmann",6);
+theTree.addNode("Java Puzzlers", "Joshua","Bloch",7);
+theTree.addNode("Java In A Nutshell", "David ","Flanagan",8);
+theTree.addNode("Java Enterprise in a Nutshell", "Jim ","Farley",9);
+theTree.addNode("Java Cookbook", "Ian ","Darwin",10);
+
+fillTable(theTree.root);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+
+         this.dispose();// TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 int clr;
  public void fillTable(Node focusNode) {
 DefaultTableModel dtm = (DefaultTableModel)jTable1.getModel();
@@ -697,8 +722,9 @@ dtm.fireTableDataChanged();
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
