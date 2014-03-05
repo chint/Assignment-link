@@ -45,7 +45,8 @@ Node newNode = new Node(key, name, name2,isbn);
 
 				// Check if the new node should go on
 				// the left side of the parent node
-
+//"abc".compareTo("def")
+//will yield something smaller than 0 as abc is alphabetically before def.
                                 if (key.compareTo( focusNode.key )<0) {
 					//  focus to the left child
 					focusNode = focusNode.leftChild;

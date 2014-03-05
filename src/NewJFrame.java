@@ -13,12 +13,15 @@ import javax.swing.table.DefaultTableModel;
  * @author Chinthaka
  */
 public class NewJFrame extends javax.swing.JFrame {
-
+   
     /**
      * Creates new form NewJFrame
      */
     public NewJFrame() {
         initComponents();
+    
+    
+    
     }
 
     /**
@@ -208,9 +211,19 @@ public class NewJFrame extends javax.swing.JFrame {
         buttonGroup1.add(jRadioButton3);
         jRadioButton3.setSelected(true);
         jRadioButton3.setText("Delete by Book Title");
+        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton3ActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(jRadioButton4);
         jRadioButton4.setText("Delete By ISBN#");
+        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton4ActionPerformed(evt);
+            }
+        });
 
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -230,27 +243,23 @@ public class NewJFrame extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton4)
-                            .addComponent(jRadioButton3))))
+                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton4))
+                    .addComponent(jRadioButton4)
+                    .addComponent(jRadioButton3))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jRadioButton3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jRadioButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(14, 14, 14)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4)
                     .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -326,9 +335,9 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField5)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jButton2))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jRadioButton1)
@@ -466,8 +475,17 @@ BinaryTree theTree = new BinaryTree();
             JOptionPane.showMessageDialog(null,"ISBN# should be numeric"  ,"Invalid type",JOptionPane.ERROR_MESSAGE);
             return;
         }
+       
+      ckIsbn(theTree.root);
+       if (ckx==10){
+       JOptionPane.showMessageDialog(null,"ISBN# already exists"  ,"Invalid type",JOptionPane.ERROR_MESSAGE);
+       ckx=0;
+       return;
+       } else{
         theTree.addNode(jTextField1.getText(),jTextField2.getText(),jTextField3.getText(),Integer.parseInt(jTextField4.getText()));
-jTextField1.setText(null);
+       }
+        
+        jTextField1.setText(null);
 jTextField2.setText(null);
 jTextField3.setText(null);
 jTextField4.setText(null);
@@ -475,7 +493,27 @@ jTextField4.setText(null);
         clr=10;
         fillTable(theTree.root);
     }//GEN-LAST:event_jButton1ActionPerformed
+public int ckx;
+    public void ckIsbn(Node focusNode) 
+        {
+            
+        if (focusNode != null ) {
+			
+                      
+                        {System.out.println(focusNode);
+      //because isbn is not the key the whole tree must be searched                                      
+                            if(focusNode.isbn==Integer.parseInt(jTextField4.getText()))
+                              {
+                                                          
+                             ckx=10;
 
+                              }
+                        ckIsbn(focusNode.leftChild);
+			ckIsbn(focusNode.rightChild);
+                        }
+			                        
+		}
+}  
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
@@ -590,13 +628,23 @@ jTextField4.setText(null);
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel dtm = (DefaultTableModel)jTable1.getModel();
-        dtm.getDataVector().removeAllElements();
-        dtm.fireTableDataChanged();
-       
-        fillTable(theTree.root);
-        //        filltext(theTree.root);
-     
+//        DefaultTableModel dtm = (DefaultTableModel)jTable1.getModel();
+//        dtm.getDataVector().removeAllElements();
+//        dtm.fireTableDataChanged();
+//        fillTable(theTree.root);
+      
+ jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+    @Override
+    public void mouseClicked(java.awt.event.MouseEvent evt) {
+       int i = jTable1.getSelectedRow();
+int j = jTable1.getSelectedColumn();
+//JOptionPane.showMessageDialog(null, jTable1.getModel().getValueAt(i, j));
+
+jTextField6.setText( (String) jTable1.getModel().getValueAt(i, j));
+
+    }
+});
+
 
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -631,7 +679,18 @@ fillTable(theTree.root);
 
          this.dispose();// TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem2ActionPerformed
-int clr;
+
+    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+     
+
+    }//GEN-LAST:event_jRadioButton3ActionPerformed
+
+    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton4ActionPerformed
+
+    
+    int clr;
  public void fillTable(Node focusNode) {
 DefaultTableModel dtm = (DefaultTableModel)jTable1.getModel();
 
@@ -675,6 +734,12 @@ dtm.fireTableDataChanged();
     /**
      * @param args the command line arguments
      */
+ public void sslect(){
+ 
+
+ }
+ 
+ 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -703,8 +768,18 @@ dtm.fireTableDataChanged();
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new NewJFrame().setVisible(true);
+                
+             
+               
             }
+            
+             
+            
         });
+        
+
+        
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
