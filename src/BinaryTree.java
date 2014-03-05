@@ -47,10 +47,10 @@ Node newNode = new Node(key, name, name2,isbn);
 				// the left side of the parent node
 //"abc".compareTo("def")
 //will yield something smaller than 0 as abc is alphabetically before def.
-                                if (key.compareTo( focusNode.key )<0) {
+                                if (key.compareTo( focusNode.key )>0) {
 					//  focus to the left child
 					focusNode = focusNode.leftChild;
-
+System.out.println("left");
 					// left child has no children
 
 					if (focusNode == null) {
@@ -65,7 +65,7 @@ Node newNode = new Node(key, name, name2,isbn);
 				} else { 
 
 					focusNode = focusNode.rightChild;
-
+System.out.println("right");
 					// If the right child has no children
 
 					if (focusNode == null) {
@@ -204,7 +204,7 @@ Node newNode = new Node(key, name, name2,isbn);
 
 			// search to the left
 
-			if ((key.compareTo( focusNode.key ))<0) {
+			if ((key.compareTo( focusNode.key ))>0) {
 
 				isItALeftChild = true;
 

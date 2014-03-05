@@ -151,6 +151,12 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
+
         jLabel2.setText("Book Title");
 
         jLabel3.setText("ISBN#");
@@ -654,6 +660,10 @@ fillTable(theTree.root);
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton4ActionPerformed
 
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
     
     int clr;
  public void fillTable(Node focusNode) {
@@ -670,10 +680,10 @@ dtm.fireTableDataChanged();
 			
 			System.out.println(focusNode.key);
                         //filltext(focusNode)
-                        clr=-1;
+                       clr=-1;
                         dtm.addRow(new Object[] {focusNode.key, focusNode.name+" "+focusNode.name2, focusNode.isbn });
 			fillTable(focusNode.rightChild);
-
+ 
 		}
 
             } 
